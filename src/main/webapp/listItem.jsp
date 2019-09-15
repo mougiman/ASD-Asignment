@@ -92,7 +92,7 @@
             Boolean ifAuc = false;
             String expdate = null;// request.getParameter("expdate");;
 
-            connector.addItem(itemID, itemName, itemDateListed, itemQuantity, itemPrice, itemDesc, itemCategory, itemSellerID, expdate, img);
+            connector.addItem(itemID, itemName, itemDateListed, itemQuantity, itemPrice, itemDesc, itemCategory, itemSellerID, expdate, img, ifAuc);
         %>
         <h3><%=itemName%> has been Listed</h3>
         <a href="listItem.jsp">List another item</a>

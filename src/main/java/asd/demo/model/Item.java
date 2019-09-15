@@ -27,13 +27,14 @@ public class Item implements Serializable {
     private String expdate;
     private String cusID;
     private String img;
+    private Boolean ifAuc;
     //private String condition;
     //private String color;
 
     public Item() {
     }
 
-    public Item(String ID, String name, String dateListed, int stock, /*int soldQuantity,*/ double price, String description, String category, String sellerID, String expdate, String img) {
+    public Item(String ID, String name, String dateListed, int stock, /*int soldQuantity,*/ double price, String description, String category, String sellerID, String expdate, String img, boolean ifAuc) {
         this.ID = ID;
         this.name = name;
         this.dateListed = dateListed;
@@ -45,6 +46,7 @@ public class Item implements Serializable {
         this.sellerID = sellerID;
         this.expdate = expdate;
         this.img = img;
+        this.ifAuc = ifAuc;
     }    
     
     public String getID() {
@@ -141,6 +143,14 @@ public class Item implements Serializable {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public Boolean getIfAuc() {
+        return ifAuc;
+    }
+
+    public void setIfAuc(Boolean ifAuc) {
+        this.ifAuc = ifAuc;
     }
 
    

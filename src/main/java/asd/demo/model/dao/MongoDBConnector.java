@@ -41,7 +41,7 @@ public class MongoDBConnector {
         collection.insertOne(document);
     }
 
-    public void addItem(String id, String name, String datelisted, int quantity, Double price, String desc, String category, String sellerId, String expdate, String img) {
+    public void addItem(String id, String name, String datelisted, int quantity, Double price, String desc, String category, String sellerId, String expdate, String img, Boolean ifAuc) {
         MongoDatabase mongoDatabase = mongoClient.getDatabase("ASD");
         MongoCollection collection = mongoDatabase.getCollection("Item");
         Document document = new Document("id", id).
@@ -53,7 +53,8 @@ public class MongoDBConnector {
                 append("category", category).
                 append("expdate", expdate).
                 append("sellerId", sellerId).
-                append("image", img);
+                append("image", img).
+                append("ifAuc", ifAuc);
         collection.insertOne(document);
     }
 
@@ -75,10 +76,9 @@ public class MongoDBConnector {
         List<Document> documents = (List<Document>) collection.find().into(new ArrayList<Document>());
         ArrayList<Item> items = new ArrayList<Item>();
         for (Document document : documents) {
-            //Item item = new Item("" + document.get("id"), "" + document.get("name"), "" + document.get("datelisted"), Integer.parseInt("" + document.get("stock")),/* Integer.parseInt("" + document.get("soldQuantity")),*/ Double.parseDouble("" + document.get("price")), "" + document.get("desc"), "" + document.get("category"), "" + document.get("sellerId"), "" + document.get("expdate"), "" + document.get("image"));
-            //items.add(item);
+            Item item = new Item("" + document.get("id"), "" + document.get("name"), "" + document.get("datelisted"), Integer.parseInt("" + document.get("stock")),/* Integer.parseInt("" + document.get("soldQuantity")),*/ Double.parseDouble("" + document.get("price")), "" + document.get("desc"), "" + document.get("category"), "" + document.get("sellerId"), "" + document.get("expdate"), "" + document.get("image"), Boolean.parseBoolean("" + document.get("ifAuc")));
+            items.add(item);
         }
-    
         return items;
     }
 
@@ -90,7 +90,7 @@ public class MongoDBConnector {
         for (Document document : documents) {
             String itemId = "" + document.get("id");
             if (itemId.equals(id)) {
-                item = new Item("" + document.get("id"), "" + document.get("name"), "" + document.get("datelisted"), Integer.parseInt("" + document.get("stock")),/* Integer.parseInt("" + document.get("soldQuantity")),*/ Double.parseDouble("" + document.get("price")), "" + document.get("desc"), "" + document.get("category"), "" + document.get("sellerId"), "" + document.get("expdate"), "" + document.get("image"));
+                item = new Item("" + document.get("id"), "" + document.get("name"), "" + document.get("datelisted"), Integer.parseInt("" + document.get("stock")),/* Integer.parseInt("" + document.get("soldQuantity")),*/ Double.parseDouble("" + document.get("price")), "" + document.get("desc"), "" + document.get("category"), "" + document.get("sellerId"), "" + document.get("expdate"), "" + document.get("image"), Boolean.parseBoolean("" + document.get("ifAuc")));
             }
         }
         return item;
