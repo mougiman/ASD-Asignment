@@ -5,9 +5,11 @@
  */
 package asd.demo.test;
 
+import asd.demo.model.Item;
 import asd.demo.model.Users;
 import asd.demo.model.dao.MongoDBConnector;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -17,14 +19,14 @@ import org.junit.Test;
  * @author George
  */
 public class UnitTest {
-    private static MongoDBConnector mdb;
+   private static MongoDBConnector mdb;
        
     public UnitTest() {  }
 
     @BeforeClass //Create an instance of MongoDBConnector using admin credentials for mLab
     public static void setUpClass() throws UnknownHostException {
         System.out.println("\n<-- Starting Unit test -->");  
-        mdb = new MongoDBConnector("<mLab Username>","<mLab Password>");      
+        mdb = new MongoDBConnector();    
     }
     
     @Test
@@ -34,12 +36,12 @@ public class UnitTest {
     }
        
     @Test 
-    public void fetchUsers(){
-        Users users = mdb.loadUsers();
-        Assert.assertNotNull("Cannot fetch ASD users",users);
-        System.out.println("\nFetching ASD users...");
+    public void fetchItems(){
+        ArrayList<Item> items = mdb.getItemList();
+        Assert.assertNotNull("Cannot fetch ASD items",items);
+        System.out.println("\nFetching ASD items...");
         System.out.println("-------------------------------------");
-        mdb.showall(users);
+        mdb.showitems(items);
     }
     
     @AfterClass

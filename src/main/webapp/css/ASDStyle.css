@@ -1,0 +1,111 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13/08/2019, 2:48:49 PM
+    Author     : Mougi
+*/
+
+body{
+    background-color: beige;
+    margin: 0;
+}
+
+.title{
+    color: red;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Helvetica,Arial,sans-serif;
+    padding: 10px;
+}
+
+.links{
+    display: inline-block;
+    color: grey;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 12px;
+    font-family: Helvetica,Arial,sans-serif;
+    padding: 10px 20px 10px 20px;
+    border-radius: 2px;
+    border-right: 2px solid darkgrey;
+}
+
+h{
+    font-size: 40px;
+    width:40%;
+    background-color: grey;
+    color: black;
+    text-decoration: underline;
+    padding: 0px 30px 10px 20px;
+}
+
+p{
+    color: grey;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 12px;
+    font-family: Helvetica,Arial,sans-serif;
+    padding: 10px;
+}
+
+.navbar{
+    background-color: lightgray; 
+    margin: auto;
+}
+
+.container{
+    width:100%;
+}
+
+.itemList{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+    background-color: lightblue;
+    justify-content: space-between;
+
+}
+
+.row{
+    padding-top: 20px;
+    background-color: lightblue;
+}
+.itemCard{
+    text-align: center;
+    width:200px;
+    height: 280px;
+    margin: 20px 20px;
+    background-color: pink;
+}
+.mainBox{
+    width: 60%;
+    line-height: 25px; 
+}
+.userBox{
+    width: 30%;
+    background-color: yellow;
+    text-align: left;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 10px 10px 10px 10px;
+}
+
+.col{
+    padding: 20px 40px 10px 50px;
+}
+
+.formbox{
+    margin: auto;
+    background-color: lightgray;
+    border: 1px solid black;
+    float: left;
+    margin-left: 50px;
+    padding: 5px;
+
+}

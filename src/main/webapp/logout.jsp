@@ -1,7 +1,7 @@
 <%-- 
     Document   : logout
-    Created on : 05/04/2018, 6:53:42 PM
-    Author     : george
+    Created on : 2019-8-17, 2:42:58
+    Author     : lee
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,15 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="animation.js"></script>
-        <script type="text/javascript" src="js/animation.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/demo.css">
-        <title>Logout Page</title>
+        <title>Logout</title>
+          <meta name="viewport" content="width=device-width">
     </head>
-    <body>       
-        <% 
-            session.invalidate();            
-            response.sendRedirect("index.jsp");
-        %>                
+    <body>
+         <form method="link" action="index.jsp">
+        <body>
+            <input type="submit" value="Logout">
+         </form>
     </body>
 </html>
